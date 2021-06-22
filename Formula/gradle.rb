@@ -41,6 +41,7 @@ class Gradle < Formula
     (testpath/"settings.gradle").write ""
     (testpath/"build.gradle").write <<~EOS
       println "gradle works!"
+      
     EOS
     gradle_output = shell_output("#{bin}/gradle build --no-daemon")
     assert_includes gradle_output, "gradle works!"
